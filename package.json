@@ -22,6 +22,6 @@
   "private": true,
   "dependencies": {
     "fs-extra": "^10.1.0",
-    "postcss": "^8.4.13"
+    "postcss": "^8.4.31"
   }
 }
