@@ -157,6 +157,67 @@
       "show": true
     },
     {
+      "version": "v2024.1.19-beta.1",
+      "hostDocs": true,
+      "info": {
+        "autoscaler": "v0.26.0-beta.1",
+        "cli": "v0.41.0-beta.1",
+        "dashboard": "v0.17.0-beta.1",
+        "installer": "v2024.1.19-beta.1",
+        "ops-manager": "v0.28.0-beta.1",
+        "provisioner": "v0.41.0-beta.1",
+        "schema-manager": "v0.17.0-beta.1",
+        "ui-server": "v0.17.0-beta.1",
+        "webhook-server": "v0.17.0-beta.1"
+      }
+    },
+    {
+      "version": "v2024.1.7-beta.0",
+      "hostDocs": true,
+      "info": {
+        "autoscaler": "v0.26.0-beta.0",
+        "cli": "v0.41.0-beta.0",
+        "dashboard": "v0.17.0-beta.0",
+        "installer": "v2024.1.7-beta.0",
+        "ops-manager": "v0.28.0-beta.0",
+        "provisioner": "v0.41.0-beta.0",
+        "schema-manager": "v0.17.0-beta.0",
+        "ui-server": "v0.17.0-beta.0",
+        "webhook-server": "v0.17.0-beta.0"
+      }
+    },
+    {
+      "version": "v2023.12.28",
+      "hostDocs": true,
+      "show": true,
+      "info": {
+        "autoscaler": "v0.25.0",
+        "cli": "v0.40.0",
+        "dashboard": "v0.16.0",
+        "installer": "v2023.12.28",
+        "ops-manager": "v0.27.0",
+        "provisioner": "v0.40.0",
+        "schema-manager": "v0.16.0",
+        "ui-server": "v0.16.0",
+        "webhook-server": "v0.16.0"
+      }
+    },
+    {
+      "version": "v2023.12.21",
+      "hostDocs": true,
+      "info": {
+        "autoscaler": "v0.24.0",
+        "cli": "v0.39.0",
+        "dashboard": "v0.15.0",
+        "installer": "v2023.12.21",
+        "ops-manager": "v0.26.0",
+        "provisioner": "v0.39.0",
+        "schema-manager": "v0.15.0",
+        "ui-server": "v0.15.0",
+        "webhook-server": "v0.15.0"
+      }
+    },
+    {
       "version": "v2023.12.11",
       "hostDocs": true,
       "show": true,
@@ -826,10 +887,6 @@
       "hostDocs": true
     },
     {
-      "version": "0.9.0",
-      "hostDocs": true
-    },
-    {
       "version": "0.9.0-rc.2",
       "hostDocs": true
     },
@@ -842,7 +899,7 @@
       "hostDocs": true
     },
     {
-      "version": "0.8.0",
+      "version": "0.9.0",
       "hostDocs": true
     },
     {
@@ -858,6 +915,10 @@
       "hostDocs": true
     },
     {
+      "version": "0.8.0",
+      "hostDocs": true
+    },
+    {
       "version": "0.7.1",
       "hostDocs": false
     },
@@ -866,7 +927,7 @@
       "hostDocs": false
     }
   ],
-  "latestVersion": "v2023.12.11",
+  "latestVersion": "v2023.12.28",
   "socialLinks": {
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/kubedb",
