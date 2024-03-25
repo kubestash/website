@@ -13,6 +13,7 @@ $pharmer-primary: #8e44ad;
 $searchlight-primary: #111738;
 $service-broker-primary: #29b4a2;
 $stash-primary: #5e2dea;
+$kubestash-primary: #431bb1;
 $swift-primary: #3f51b6;
 $voyager-primary: #2d2a78;
 
@@ -69,5 +70,8 @@ body {
 
   &.voyager {
     --ac-primary: #{$voyager-primary};
+  }
+  &.kubestash {
+    --ac-primary: #{$kubestash-primary};
   }
 }

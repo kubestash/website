@@ -4,7 +4,71 @@
 .is-fullwidth {
   width: 100% !important;
 }
+.whats-new {
+  position: absolute;
+  z-index: 1;
+  top: -0.5rem;
+  right: -2.5rem;
+  font-size: 0.8rem;
+  color: $ac-white;
+  padding: 0.2rem 0.3rem;
+  line-height: 1.2;
+  display: none;
+  &.bubble {
+    &::after, &::before {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    &::after {
+      width: 8px;
+      height: 8px;
+    }
+  }
 
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 2rem;
+    height: 1rem;
+    background: $ac-primary;
+    border-radius: 2px;
+    animation: pulse-border 1500ms ease-out infinite;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 2rem;
+    height: 1rem;
+    background: $ac-primary;
+    transition: all 200ms;
+  }
+
+  @keyframes pulse-border {
+    0% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0)
+        scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0)
+        scale(1.5);
+      opacity: 0;
+    }
+  }
+}
 .yt-thumbnail {
   position: relative;
   z-index: 1;
@@ -298,6 +362,30 @@
       color: $ac-white;
       padding: 1em 1em;
       background-color: $ac-red;
+      width: 100%;
+    }
+  }
+}
+
+.text-underline {
+  font-weight: 500;
+  position: relative;
+  text-decoration: underline;
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: $ac-primary;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &:after {
       width: 100%;
     }
   }
