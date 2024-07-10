@@ -6,8 +6,10 @@ googleAnalytics: UA-62096468-4
 disableKinds:
 - taxonomy
 - taxonomyTerm
+theme: hugo-product-theme
 params:
   product_key: kubestash
+  primary_color: 431BB1
   main_menu_dropdown_item: addons
   domain_appscode: https://appscode.com
   domain_bytebuilders: https://appscode.com
