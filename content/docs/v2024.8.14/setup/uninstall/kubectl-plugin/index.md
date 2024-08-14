@@ -1,0 +1,27 @@
+---
+title: Uninstall KubeStash kubectl Plugin
+description: Uninstallation guide for KubeStash kubectl Plugin
+menu:
+  docs_v2024.8.14:
+    identifier: uninstall-kubestash-kubectl-plugin
+    name: KubeStash kubectl Plugin
+    parent: uninstallation-guide
+    weight: 30
+product_name: kubestash
+menu_name: docs_v2024.8.14
+section_menu_id: setup
+info:
+  cli: v0.10.0
+  installer: v2024.8.14
+  version: v2024.8.14
+---
+
+# Uninstall KubeStash kubectl Plugin
+
+## Uninstall using Krew
+
+To uninstall KubeStash `kubectl` plugin, run the following command:
+
+```bash
+kubectl krew uninstall kubestash
+```
