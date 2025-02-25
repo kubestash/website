@@ -1,6 +1,6 @@
 .PHONY: run
 run:
-	hugo server --config=config.dev.yaml
+	hugo server --ignoreCache --config=config.dev.yaml
 
 .PHONY: docs
 docs: hugo-tools
