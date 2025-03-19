@@ -21,40 +21,22 @@
             }
           ],
           "source": "**"
-        },
-        {
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "max-age=360000"
-            }
-          ],
-          "source": "@(images|fonts|js_global)/**"
-        },
-        {
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "max-age=300"
-            }
-          ],
-          "source": "404.html"
         }
       ],
       "redirects": [
         {
           "source": "/docs/latest/",
-          "destination": "/docs/v2025.2.6-rc.0/",
+          "destination": "/docs/v2025.2.10/",
           "type": 302
         },
         {
           "source": "/docs/latest/:rest*",
-          "destination": "/docs/v2025.2.6-rc.0/:rest",
+          "destination": "/docs/v2025.2.10/:rest",
           "type": 302
         },
         {
           "source": "/docs",
-          "destination": "/docs/v2025.2.6-rc.0/",
+          "destination": "/docs/v2025.2.10/",
           "type": 302
         }
       ]
