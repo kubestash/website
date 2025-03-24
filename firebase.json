@@ -26,17 +26,17 @@
       "redirects": [
         {
           "source": "/docs/latest/",
-          "destination": "/docs/v2025.2.10/",
+          "destination": "/docs/v2025.3.24/",
           "type": 302
         },
         {
           "source": "/docs/latest/:rest*",
-          "destination": "/docs/v2025.2.10/:rest",
+          "destination": "/docs/v2025.3.24/:rest",
           "type": 302
         },
         {
           "source": "/docs",
-          "destination": "/docs/v2025.2.10/",
+          "destination": "/docs/v2025.3.24/",
           "type": 302
         }
       ]
