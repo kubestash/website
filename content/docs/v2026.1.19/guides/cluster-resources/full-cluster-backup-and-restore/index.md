@@ -9,7 +9,7 @@ menu:
     identifier: kubestash-full-cluster-backup-and-restore
     name: Full Cluster Backup & Restore
     parent: kubestash-cluster-resources
-    weight: 35
+    weight: 60
 info:
   cli: v0.22.0
   installer: v2026.1.19

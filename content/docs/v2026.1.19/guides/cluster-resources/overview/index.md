@@ -9,7 +9,7 @@ menu:
     identifier: kubestash-cluster-resources-overview
     name: How does it work?
     parent: kubestash-cluster-resources
-    weight: 15
+    weight: 10
 info:
   cli: v0.22.0
   installer: v2026.1.19

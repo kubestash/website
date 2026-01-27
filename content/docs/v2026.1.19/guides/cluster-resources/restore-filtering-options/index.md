@@ -9,7 +9,7 @@ menu:
     identifier: kubestash-cluster-restore-filtering-options
     name: Restore Filtering Options
     parent: kubestash-cluster-resources
-    weight: 25
+    weight: 40
 info:
   cli: v0.22.0
   installer: v2026.1.19

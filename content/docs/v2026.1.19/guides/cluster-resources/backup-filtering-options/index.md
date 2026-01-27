@@ -9,7 +9,7 @@ menu:
     identifier: kubestash-cluster-resources-backup-filtering-options
     name: Backup Filtering Options
     parent: kubestash-cluster-resources
-    weight: 20
+    weight: 30
 info:
   cli: v0.22.0
   installer: v2026.1.19

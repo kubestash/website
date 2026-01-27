@@ -6,7 +6,7 @@ menu:
     identifier: kubestash-cluster-resources
     name: Cluster Resources
     parent: guides
-    weight: 79
+    weight: 72
 menu_name: docs_v2026.1.19
 info:
   cli: v0.22.0
