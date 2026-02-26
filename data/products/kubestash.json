@@ -177,12 +177,12 @@
       "show": true
     },
     {
-      "version": "v2026.2.27",
+      "version": "v2026.2.26",
       "hostDocs": true,
       "show": true,
       "info": {
-        "cli": "v0.23.0",
-        "installer": "v2026.2.27"
+        "cli": "v0.25.0",
+        "installer": "v2026.2.26"
       }
     },
     {
@@ -381,7 +381,7 @@
       }
     }
   ],
-  "latestVersion": "v2026.2.27",
+  "latestVersion": "v2026.2.26",
   "socialLinks": {
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/kubestash",
