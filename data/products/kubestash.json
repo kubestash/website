@@ -168,6 +168,19 @@
       },
       "summary": "",
       "description": "Stash comes with native support for monitoring via Prometheus. You can use builtin Prometheus scrapper or CoreOS Prometheus Operator to monitor your database in Kubernetes. You can use the Grafana to view key operational metrics, including compute/memory/storage capacity utilization, I/O activity, and instance connections."
+    },
+    {
+      "title": "Seamless Source/Target Switchover",
+      "image": {
+        "src": "/assets/images/addons/illustrations/declarative-api.png",
+        "alt": "http"
+      },
+      "icon": {
+        "src": "/assets/images/products/stash/features/declarative-api.svg",
+        "alt": "http"
+      },
+      "summary": "Seamless source/target role switching with minimal performance impact.",
+      "description": "KubeStash supports seamless source/target role switching with minimal performance impact. Combined with KubeDB, primary and secondary roles can be switched between DC and DR without operator improvisation. BackupVerifier proves the target side is restore-tested before switchover."
     }
   ],
   "versions": [
