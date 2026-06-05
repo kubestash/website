@@ -50,6 +50,64 @@ params:
   docs_url: https://appscode.com/docs
   learn_url: https://appscode.com/learn
 menu:
+  product_kubestash:
+  - name: Features
+    identifier: features
+    url: /features/
+    weight: 10
+  - name: Pricing
+    identifier: pricing
+    url: /pricing/
+    weight: 20
+  - name: Addons
+    identifier: addons
+    weight: 30
+  - name: Documentation
+    identifier: documentation
+    url: /docs/v2026.5.18-rc.0/welcome/
+    weight: 40
+  - name: Elasticsearch
+    identifier: elasticsearch
+    parent: addons
+    weight: 10
+    pre: /assets/images/addons/logos/elasticsearch.svg
+    pageRef: /addons/databases/backup-and-restore-elasticsearch-on-kubernetes/
+  - name: MariaDB
+    identifier: mariadb
+    parent: addons
+    weight: 20
+    pre: /assets/images/addons/logos/mariadbs.svg
+    pageRef: /addons/databases/backup-and-restore-mariadb-on-kubernetes/
+  - name: MySQL
+    identifier: mysql
+    parent: addons
+    weight: 50
+    pre: /assets/images/addons/logos/mysql.svg
+    pageRef: /addons/databases/backup-and-restore-mysql-on-kubernetes/
+  - name: PostgreSQL
+    identifier: postgres
+    parent: addons
+    weight: 80
+    pre: /assets/images/addons/logos/postgres.svg
+    pageRef: /addons/databases/backup-and-restore-postgres-on-kubernetes/
+  - name: MongoDB
+    identifier: mongodb
+    parent: addons
+    weight: 90
+    pre: /assets/images/addons/logos/mongodb.svg
+    pageRef: /addons/databases/backup-and-restore-mongodb-on-kubernetes/
+  - name: Redis
+    identifier: redis
+    parent: addons
+    weight: 100
+    pre: /assets/images/addons/logos/redis.svg
+    pageRef: /addons/databases/backup-and-restore-redis-on-kubernetes/
+  - name: etcd
+    identifier: etcd
+    parent: addons
+    weight: 110
+    pre: /assets/images/addons/logos/etcd.svg
+    pageRef: /addons/databases/backup-and-restore-etcd-on-kubernetes/
   main:
   - name: Addons
     identifier: addons
