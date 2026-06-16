@@ -26,7 +26,7 @@ Here, we are going to demonstrate how you can perform different actions before a
 ## Before You Begin
 
 - At first, you need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
-- Install KubeStash in your cluster following the steps [here](/docs/v2026.5.18-rc.0/setup/install/kubestash/).
+- Install KubeStash in your cluster following the steps [here](/docs/v2026.5.18-rc.0/setup/install/kubestash/_index).
 - Install [KubeDB](https://kubedb.com) in your cluster following the steps [here](https://kubedb.com/docs/latest/setup/). This step is optional. You can deploy your database using any method you want. We are using KubeDB because KubeDB simplifies many of the difficult or tedious management tasks of running production-grade databases on private and public clouds.
 - If you are not familiar with how KubeStash backup and restore MySQL databases, please check the [KubeDB](https://kubedb.com/) documentation for MySQL backup and restore using KubeStash.
 - Also, if you haven't read about how hooks work in KubeStash, please check it from [here](/docs/v2026.5.18-rc.0/guides/hooks/overview/).

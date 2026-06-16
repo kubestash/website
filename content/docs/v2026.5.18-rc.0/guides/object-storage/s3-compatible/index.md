@@ -272,7 +272,6 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: fuse-pv
-  namespace: demo
 spec:
   storageClassName: csi-s3
   capacity:
@@ -529,7 +528,7 @@ metadata:
   namespace: demo
 spec:
   target:
-    apiGroup:
+    apiGroup: ""
     kind: PersistentVolumeClaim
     name: fuse-pvc
     namespace: demo
@@ -753,7 +752,7 @@ metadata:
   namespace: demo
 spec:
   target:
-    apiGroup:
+    apiGroup: ""
     kind: PersistentVolumeClaim
     name: fuse-pvc
     namespace: demo

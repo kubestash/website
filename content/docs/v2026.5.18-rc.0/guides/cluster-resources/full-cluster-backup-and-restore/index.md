@@ -231,7 +231,8 @@ metadata:
   name: cluster-resources-backup                               
   namespace: demo                                              
 spec:
-...
+  sessions:
+    -
       addon:                                                   
         name: kubedump-addon                                   
         tasks:                                                 
@@ -546,7 +547,6 @@ metadata:
   name: cluster-restore
   namespace: demo
 spec:
-...
   addon:
     name: kubedump-addon
     tasks:

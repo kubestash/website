@@ -80,9 +80,9 @@ metadata:
   labels:
     app: my-app
 type: Opaque
-data:
+stringData:
   username: <your_username>
-  password:  <your_password>
+  password: <your_password>
 ---
 apiVersion: v1
 kind: Service
@@ -280,7 +280,7 @@ metadata:
   labels:
     app: my-sts
 type: Opaque
-data:
+stringData:
   username: <your_username>
   password: <your_password>
 ---
@@ -483,7 +483,8 @@ metadata:
   name: cluster-resources-backup
   namespace: demo
 spec:
-...
+  sessions:
+    -
       addon:
         name: kubedump-addon
         tasks:
@@ -855,7 +856,6 @@ metadata:
   name: cluster-resources-restore
   namespace: demo
 spec:
-...
   addon:
     name: kubedump-addon
     tasks:

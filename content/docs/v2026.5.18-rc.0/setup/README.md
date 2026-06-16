@@ -22,14 +22,14 @@ info:
 # Setup
 
 <div style="text-align: center;">
-  <a class="button is-info is-medium is-active has-text-weight-normal" href="/docs/v2026.5.18-rc.0/setup/install/kubestash/"  style="background:#FC6011; width: 18rem;">Install KubeStash</a>
+  <a class="button is-info is-medium is-active has-text-weight-normal" href="/docs/v2026.5.18-rc.0/setup/install/kubestash/_index"  style="background:#FC6011; width: 18rem;">Install KubeStash</a>
 </div>
 <br>
 
 The setup section contains instructions for installing the KubeStash and its various components in Kubernetes. This section has been divided into the following sub-sections:
 
 - **Install KubeStash:** Installation instructions for KubeStash and its various components.
-  - [KubeStash operator](/docs/v2026.5.18-rc.0/setup/install/kubestash/): Installation instructions for KubeStash operator.
+  - [KubeStash operator](/docs/v2026.5.18-rc.0/setup/install/kubestash/_index): Installation instructions for KubeStash operator.
   - [KubeStash kubectl Plugin](/docs/v2026.5.18-rc.0/setup/install/kubectl-plugin/): Installation instructions for kubeStash `kubectl` plugin.
   - [Troubleshooting](/docs/v2026.5.18-rc.0/setup/install/troubleshooting/): Troubleshooting guide for various installation problems.
 

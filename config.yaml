@@ -44,7 +44,7 @@ params:
     giscus:
       repo: appscode/community
       repoId: R_kgDOG-h6rw
-      category: Stash
+      category: KubeStash
       categoryId: DIC_kwDOG-h6r84COCFw
       map: title
   docs_url: https://appscode.com/docs

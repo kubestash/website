@@ -443,8 +443,7 @@ kind: Snapshot
 metadata:
   name: gcs-repository-deployment-volumeshot-frequent-backup-1705483201
   namespace: demo
-spec:
-  ---
+spec: {}
 status:
   components:
     volumesnapshot:
@@ -457,8 +456,7 @@ status:
         - hostPath: /source/config
           pvcName: source-config
           volumeSnapshotName: source-config-1705483201
-  conditions:
-   ---
+  conditions: []
   phase: Succeeded
   totalComponents: 1
 ```

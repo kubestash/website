@@ -273,7 +273,7 @@ metadata:
   namespace: demo
 spec:
   target:
-    apiGroup:
+    apiGroup: ""
     kind: PersistentVolumeClaim
     name:  source-pvc
     namespace: demo
@@ -407,8 +407,7 @@ kind: Snapshot
 metadata:
   name: gcs-repository-pvc-volume-snapshot-frequent-backup-1705402801
   namespace: demo
-spec:
-  ---
+spec: {}
 status:
   components:
     volumesnapshot:
@@ -417,8 +416,7 @@ status:
       volumeSnapshotterStats:
         - pvcName: source-pvc
           volumeSnapshotName: source-pvc-1705402801
-  conditions:
-    ---
+  conditions: []
   phase: Succeeded
   snapshotTime: "2024-01-16T11:00:08Z"
   totalComponents: 1

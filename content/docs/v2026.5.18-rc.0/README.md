@@ -39,7 +39,7 @@ Concept explains some significant aspect of KubeStash. This is where you can lea
 Setup contains instruction for installing, uninstalling, and upgrading KubeStash.
 
 - **Install KubeStash:** Provides installation instructions for KubeStash and its various components.
-  - [KubeStash](/docs/v2026.5.18-rc.0/setup/install/kubestash/): Provides installation instructions for KubeStash.
+  - [KubeStash](/docs/v2026.5.18-rc.0/setup/install/kubestash/_index): Provides installation instructions for KubeStash.
   - [kubeStash kubectl Plugin](/docs/v2026.5.18-rc.0/setup/install/kubectl-plugin/): Provides installation instructions for KubeStash `kubectl` plugin.
   - [Troubleshooting](/docs/v2026.5.18-rc.0/setup/install/troubleshooting/): Provides troubleshooting guide for various installation problems.
 - **Uninstall KubeStash:** Provides uninstallation instructions for KubeStash and its various components.
