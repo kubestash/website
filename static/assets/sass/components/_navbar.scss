@@ -961,6 +961,8 @@ Responsive Classes
     &.documentation-menu {
       margin-left: 0;
       padding: 0;
+      height: auto;
+
       ul .nav-item {
         .link.is-active:after {
           display: none;
