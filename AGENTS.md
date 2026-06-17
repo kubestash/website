@@ -18,7 +18,7 @@ make gen-prod         # Production build with --minify → public/
 make docs             # Aggregate docs using hugo-tools (downloads bin/hugo-tools)
 make qa               # Build + deploy to Firebase QA channel
 make release          # Build + deploy to Firebase production
-make check-links      # Run liche link checker against localhost:1313
+make check-links      # Run lychee link checker against localhost:1313
 ```
 
 There are **no tests** in this project. `npm test` is a stub that exits with an error.
