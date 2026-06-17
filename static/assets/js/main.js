@@ -178,6 +178,52 @@ function closeModal() {
 // }, 1500);
 
 var h_editor = document.querySelector('.hero-area-code-editor');
+
+// Hero parallax: orbs and chips shift gently on mousemove for a "live" feel
+(function () {
+  var hero = document.querySelector('.hero-area.is-product');
+  if (!hero) return;
+  var parallaxEls = hero.querySelectorAll('[data-parallax]');
+  var chips = hero.querySelectorAll('.hero-icon-chip');
+  var cx = 0, cy = 0, tx = 0, ty = 0;
+  var raf;
+
+  hero.addEventListener('mousemove', function (e) {
+    var rect = hero.getBoundingClientRect();
+    // Normalise to -1..1 from centre
+    cx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    cy = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+  });
+
+  hero.addEventListener('mouseleave', function () {
+    cx = 0; cy = 0;
+  });
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function tick() {
+    tx = lerp(tx, cx, 0.06);
+    ty = lerp(ty, cy, 0.06);
+
+    parallaxEls.forEach(function (el) {
+      var strength = parseFloat(el.getAttribute('data-parallax')) * 400;
+      el.style.transform = 'translate(' + (tx * strength) + 'px, ' + (ty * strength) + 'px)';
+    });
+
+    // Chips drift in opposing direction at a subtler rate
+    chips.forEach(function (el, i) {
+      var s = (i % 2 === 0 ? 1 : -1) * 14;
+      var baseAnim = el.style.transform || '';
+      // Only override if not mid-float (use a data attribute to track base)
+      el.style.setProperty('--parallax-x', (tx * s) + 'px');
+      el.style.setProperty('--parallax-y', (ty * s * 0.6) + 'px');
+    });
+
+    raf = requestAnimationFrame(tick);
+  }
+  tick();
+}());
+
 document.addEventListener("DOMContentLoaded", () => {
   // highligh js initilization start
   if (h_editor) {
