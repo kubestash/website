@@ -1,0 +1,133 @@
+{{ define "main" }}
+
+{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+{{ $data := "" }}
+{{ if .Params.data }}
+  {{ $data = getJSON .Params.data }}
+{{ end }}
+
+{{ with $data }}
+
+<!-- addon hero start -->
+<section class="addon-hero is-product is-overview {{ .id }}">
+  <div class="addon-hero-bg" aria-hidden="true">
+    <div class="addon-orb addon-orb-1"></div>
+    <div class="addon-orb addon-orb-2"></div>
+    <div class="addon-dot-grid"></div>
+  </div>
+  <div class="container">
+    <div class="columns is-vcentered is-multiline">
+      <div class="column is-6 is-full-touch">
+        <div class="addon-hero-content">
+          <div class="addon-hero-badge">
+            <iconify-icon icon="heroicons:circle-stack" width="13" height="13"></iconify-icon>
+            <span>Database Addon</span>
+          </div>
+          <h1>{{ .title | markdownify }}</h1>
+          <p>{{ .summary | markdownify }}</p>
+          <div class="buttons">
+            <a href="/docs/{{ $p.latestVersion }}/{{- if or (and (gt (len (where site.Menus.main "Name" "Addons")) 0) (ne (site.Params.product_key) "kubestash")) (and (eq (site.Params.product_key) "kubestash") (ne .id "kubedump")) -}}addons{{- else -}}guides{{- end -}}/{{- if eq .id "opensearch" -}}elasticsearch/quickstart/overview/opensearch{{- else if eq .id "valkey" -}}redis/quickstart/overview/valkey{{- else -}}{{ .id }}{{- end -}}/{{- if eq .id "kubedump" -}}overview/{{- end -}}" class="button ac-button is-primary">
+              <span class="icon"><iconify-icon icon="heroicons:book-open" width="16" height="16"></iconify-icon></span>
+              <span>User Guides</span>
+            </a>
+            <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary">
+              <span class="icon"><iconify-icon icon="heroicons:chat-bubble-bottom-center" width="16" height="16"></iconify-icon></span>
+              <span>Get in Touch</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="column is-6 is-full-touch">
+        <div class="hero-area-right">
+          <div class="hero-area-code-editor">
+            <div class="editor-header">
+              <span class="action close"></span>
+              <span class="action maximize"></span>
+              <span class="action minimize"></span>
+              <span class="editor-header-label">BackupConfiguration</span>
+            </div>
+            {{ highlight (transform.Remarshal "yaml" .example) "yaml" "lineNos=inline, style=dracula" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- addon hero end -->
+
+<!-- brand logos start -->
+<div class="social-prove-brand-area">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-12">
+        <div class="brand-image-wrapper owl-carousel">
+          {{ range $customer := $.Site.Data.customers }}
+          {{ if $customer.show }}
+          <div class="single-brand"><img loading="lazy" src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- brand logos end -->
+
+<!-- addon about section start -->
+<section class="addon-about-section">
+  <div class="addon-about-bg" aria-hidden="true"></div>
+  <div class="container">
+    <!-- top: description + image side by side -->
+    <div class="addon-about-top">
+      <div class="addon-about-text">
+        <div class="addon-section-eyebrow">
+          <iconify-icon icon="heroicons:information-circle" width="14" height="14"></iconify-icon>
+          <span>About</span>
+        </div>
+        <h2>{{ .title | markdownify }}</h2>
+        <div class="addon-about-body">{{ .description | markdownify }}</div>
+      </div>
+      <div class="addon-about-visual">
+        <img loading="lazy" src="{{ .hero }}" alt="{{ .title }}" />
+      </div>
+    </div>
+    <!-- bottom: feature capability cards -->
+    <div class="addon-capability-grid">
+      {{ range .features }}
+      <div class="addon-capability-card">
+        <span class="addon-capability-icon" aria-hidden="true">
+          <iconify-icon icon="heroicons:check-circle" width="20" height="20"></iconify-icon>
+        </span>
+        <span class="addon-capability-label">{{ .title }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!-- addon about section end -->
+
+<!-- addon features sections start -->
+<div class="addon-feature-sections">
+  {{ range $idx, $f := .features }}
+  <section class="addon-feature-section {{ if modBool $idx 2 }}addon-feature-section--reversed{{ end }}">
+    <div class="container">
+      <div class="addon-feature-inner">
+        <div class="addon-feature-text">
+          <div class="addon-feature-num">{{ printf "%02d" (add $idx 1) }}</div>
+          <h3>{{ $f.title }}</h3>
+          <p>{{ $f.description }}</p>
+        </div>
+        <div class="addon-feature-visual">
+          <div class="addon-feature-img-wrap">
+            <img src="{{ $f.image }}" alt="{{ $f.title }}" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+</div>
+<!-- addon features sections end -->
+
+{{ end }}
+{{ end }}
