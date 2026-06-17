@@ -15,6 +15,14 @@
     <div class="addon-orb addon-orb-2"></div>
     <div class="addon-dot-grid"></div>
   </div>
+  <!-- decorative floating shapes -->
+  <div class="addon-shape addon-shape-ring addon-shape-tl" aria-hidden="true"></div>
+  <div class="addon-shape addon-shape-ring addon-shape-br" aria-hidden="true"></div>
+  <div class="addon-shape addon-shape-dot addon-shape-d1" aria-hidden="true"></div>
+  <div class="addon-shape addon-shape-dot addon-shape-d2" aria-hidden="true"></div>
+  <div class="addon-shape addon-shape-dot addon-shape-d3" aria-hidden="true"></div>
+  <div class="addon-shape addon-shape-cross addon-shape-c1" aria-hidden="true"></div>
+  <div class="addon-shape addon-shape-cross addon-shape-c2" aria-hidden="true"></div>
   <div class="container">
     <div class="columns is-vcentered is-multiline">
       <div class="column is-6 is-full-touch">
@@ -30,7 +38,7 @@
               <span class="icon"><iconify-icon icon="heroicons:book-open" width="16" height="16"></iconify-icon></span>
               <span>User Guides</span>
             </a>
-            <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary">
+            <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-white">
               <span class="icon"><iconify-icon icon="heroicons:chat-bubble-bottom-center" width="16" height="16"></iconify-icon></span>
               <span>Get in Touch</span>
             </a>
@@ -55,56 +63,150 @@
 </section>
 <!-- addon hero end -->
 
-<!-- brand logos start -->
-<div class="social-prove-brand-area">
-  <div class="container">
-    <div class="columns">
-      <div class="column is-12">
-        <div class="brand-image-wrapper owl-carousel">
-          {{ range $customer := $.Site.Data.customers }}
-          {{ if $customer.show }}
-          <div class="single-brand"><img loading="lazy" src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
-          {{ end }}
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- brand logos end -->
 
 <!-- addon about section start -->
 <section class="addon-about-section">
   <div class="addon-about-bg" aria-hidden="true"></div>
   <div class="container">
-    <!-- top: description + image side by side -->
     <div class="addon-about-top">
+
+      <!-- Left: text -->
       <div class="addon-about-text">
         <div class="addon-section-eyebrow">
           <iconify-icon icon="heroicons:information-circle" width="14" height="14"></iconify-icon>
           <span>About</span>
         </div>
-        <h2>{{ .title | markdownify }}</h2>
+        <h2>What is <span class="addon-about-gradient">{{ .name }}</span> Backup?</h2>
         <div class="addon-about-body">{{ .description | markdownify }}</div>
+        <div class="addon-about-chips">
+          <span><iconify-icon icon="heroicons:shield-check" width="14" height="14"></iconify-icon> AES-256 Encrypted</span>
+          <span><iconify-icon icon="heroicons:cloud" width="14" height="14"></iconify-icon> Any Cloud</span>
+          <span><iconify-icon icon="heroicons:arrows-pointing-in" width="14" height="14"></iconify-icon> Deduplicated</span>
+          <span><iconify-icon icon="heroicons:code-bracket" width="14" height="14"></iconify-icon> Declarative API</span>
+        </div>
       </div>
+
+      <!-- Right: flow diagram -->
       <div class="addon-about-visual">
-        <img loading="lazy" src="{{ .hero }}" alt="{{ .title }}" />
+        <div class="addon-about-flow">
+
+          <!-- Node: Database -->
+          <div class="aaf-node aaf-node--db">
+            <div class="aaf-node-icon">
+              <img src="/assets/images/addons/logos/{{ .id }}.svg" alt="{{ .name }}" />
+            </div>
+            <div class="aaf-node-label">{{ .name }}</div>
+            <div class="aaf-node-sub">Kubernetes Pod</div>
+          </div>
+
+          <!-- Connector -->
+          <div class="aaf-connector" aria-hidden="true">
+            <div class="aaf-connector-line">
+              <div class="aaf-connector-track aaf-connector-track--down"></div>
+              <div class="aaf-connector-track aaf-connector-track--up"></div>
+            </div>
+            <div class="aaf-connector-labels">
+              <span>
+                <iconify-icon icon="heroicons:arrow-up-tray" width="11" height="11"></iconify-icon>
+                Backup
+              </span>
+              <span>
+                <iconify-icon icon="heroicons:arrow-down-tray" width="11" height="11"></iconify-icon>
+                Restore
+              </span>
+            </div>
+          </div>
+
+          <!-- Node: Operator -->
+          <div class="aaf-node aaf-node--kubestash">
+            <div class="aaf-node-icon aaf-node-icon--brand">
+              <img src="/assets/images/products/{{ $.Site.Params.product_key }}/{{ $.Site.Params.product_key }}.png" alt="{{ $p.name }}" />
+            </div>
+            <div class="aaf-node-label">{{ $p.name }}</div>
+            <div class="aaf-node-sub">Operator</div>
+            <div class="aaf-node-badges">
+              <span>Encrypted</span>
+              <span>Deduplicated</span>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="aaf-connector" aria-hidden="true">
+            <div class="aaf-connector-line">
+              <div class="aaf-connector-track aaf-connector-track--down"></div>
+              <div class="aaf-connector-track aaf-connector-track--up"></div>
+            </div>
+            <div class="aaf-connector-labels">
+              <span>
+                <iconify-icon icon="heroicons:arrow-up-tray" width="11" height="11"></iconify-icon>
+                Push
+              </span>
+              <span>
+                <iconify-icon icon="heroicons:arrow-down-tray" width="11" height="11"></iconify-icon>
+                Pull
+              </span>
+            </div>
+          </div>
+
+          <!-- Node: Cloud Storage -->
+          <div class="aaf-node aaf-node--storage">
+            <div class="aaf-node-icon aaf-node-icon--cloud">
+              <iconify-icon icon="heroicons:cloud" width="28" height="28"></iconify-icon>
+            </div>
+            <div class="aaf-node-label">Cloud Storage</div>
+            <div class="aaf-node-sub">S3 · GCS · Azure · …</div>
+          </div>
+
+        </div>
       </div>
+
     </div>
-    <!-- bottom: feature capability cards -->
-    <div class="addon-capability-grid">
-      {{ range .features }}
-      <div class="addon-capability-card">
-        <span class="addon-capability-icon" aria-hidden="true">
-          <iconify-icon icon="heroicons:check-circle" width="20" height="20"></iconify-icon>
-        </span>
-        <span class="addon-capability-label">{{ .title }}</span>
-      </div>
-      {{ end }}
-    </div>
+
   </div>
 </section>
 <!-- addon about section end -->
+
+<!-- how it works start -->
+<section class="addon-how-section">
+  <div class="container">
+    <div class="addon-section-header">
+      <div class="addon-section-eyebrow">
+        <iconify-icon icon="heroicons:map" width="14" height="14"></iconify-icon>
+        <span>How It Works</span>
+      </div>
+      <h2>Backup your {{ .name }} in 3 simple steps</h2>
+    </div>
+    <div class="addon-how-grid">
+      <div class="addon-how-step">
+        <div class="addon-how-num">01</div>
+        <div class="addon-how-icon">
+          <iconify-icon icon="heroicons:server" width="28" height="28"></iconify-icon>
+        </div>
+        <h3>Install {{ $p.name }}</h3>
+        <p>Deploy {{ $p.name }} in your Kubernetes cluster using Helm in minutes.</p>
+      </div>
+      <div class="addon-how-connector" aria-hidden="true"></div>
+      <div class="addon-how-step">
+        <div class="addon-how-num">02</div>
+        <div class="addon-how-icon">
+          <iconify-icon icon="heroicons:calendar-days" width="28" height="28"></iconify-icon>
+        </div>
+        <h3>Configure Backup</h3>
+        <p>Define a BackupConfiguration with your schedule, retention policy, and storage backend.</p>
+      </div>
+      <div class="addon-how-connector" aria-hidden="true"></div>
+      <div class="addon-how-step">
+        <div class="addon-how-num">03</div>
+        <div class="addon-how-icon">
+          <iconify-icon icon="heroicons:arrow-path" width="28" height="28"></iconify-icon>
+        </div>
+        <h3>Restore Anytime</h3>
+        <p>Restore your {{ .name }} database to any point in time with a single RestoreSession resource.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- how it works end -->
 
 <!-- addon features sections start -->
 <div class="addon-feature-sections">
@@ -128,6 +230,35 @@
   {{ end }}
 </div>
 <!-- addon features sections end -->
+
+<!-- related addons start -->
+<section class="addon-related-section">
+  <div class="container">
+    <div class="addon-section-header">
+      <div class="addon-section-eyebrow">
+        <iconify-icon icon="heroicons:squares-2x2" width="14" height="14"></iconify-icon>
+        <span>More Addons</span>
+      </div>
+      <h2>Explore More Database Addons</h2>
+    </div>
+    <div class="addon-related-grid">
+      {{ $currentID := .id }}
+      {{ range $key, $addon := (index $.Site.Data.products $.Site.Params.product_key).addons }}
+        {{ if ne $addon.id $currentID }}
+        <a href="/addons/databases/backup-and-restore-{{ $addon.id }}-on-kubernetes" class="addon-related-card">
+          <div class="addon-related-logo">
+            <img src="/assets/images/addons/logos/{{ $addon.id }}.svg" alt="{{ $addon.name }}" loading="lazy" />
+          </div>
+          <span class="addon-related-name">{{ $addon.name }}</span>
+        </a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!-- related addons end -->
+
+
 
 {{ end }}
 {{ end }}
