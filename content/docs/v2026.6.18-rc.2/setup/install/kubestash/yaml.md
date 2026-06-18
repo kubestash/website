@@ -27,6 +27,6 @@ $ helm template kubestash oci://ghcr.io/appscode-charts/kubestash \
         --set-file global.license=/path/to/the/license.txt | kubectl apply -f -
 ```
 
-To see the detailed configuration options, visit [here](https://github.com/kubestash/installer/tree/master/charts/kubestash).
+To see the detailed configuration options, visit [here](https://github.com/kubestash/installer/tree/{{< param "info.version" >}}/charts/kubestash).
 
 Next: [verify the installation](/docs/v2026.6.18-rc.2/setup/install/kubestash/configuration).
