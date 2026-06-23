@@ -1,0 +1,12 @@
+<div class="ac-trusted" data-product="kubestash" data-theme="light">
+  <div class="container">
+    <p class="ac-trusted-label">Trusted by engineers at</p>
+    <div class="ac-logo-grid">
+      {{ range $customer := $.Site.Data.customers }}
+      {{ if $customer.show }}
+      <img src="{{ $customer.logo }}" alt="{{ $customer.name }}" loading="lazy">
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>

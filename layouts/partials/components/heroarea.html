@@ -1,0 +1,138 @@
+{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+<section class="ac-hero" data-product="kubestash" data-theme="light">
+  <div class="container">
+    <div class="columns is-vcentered is-multiline" style="row-gap:3rem;">
+
+      <!-- Left copy -->
+      <div class="column is-6 is-full-touch">
+
+        <!-- dynamic news badge -->
+        <div class="news-message-wrapper" style="margin-bottom:1.25rem;">
+          <a href="" class="news-message is-hidden"><span></span></a>
+        </div>
+        <script type="text/javascript">
+          (function () {
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            xhr.onreadystatechange = function () {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                var result = JSON.parse(xhr.responseText);
+                if (result.content) {
+                  var a = document.querySelector(".news-message");
+                  a.querySelector("span").innerHTML = result.content;
+                  if (result.link) { a.href = result.link; a.target = "_blank"; }
+                  a.classList.remove('is-hidden');
+                }
+              }
+            };
+            xhr.open('GET', 'https://x.appscode.com/_/news?p={{ $p.name }}');
+            xhr.send();
+          }());
+        </script>
+
+        <h1>Kubernetes Backup<br>That <strong>Actually Works</strong></h1>
+
+        <p class="ac-hero-sub">{{ $p.summary | safeHTML }}</p>
+
+        <div class="ac-hero-actions">
+          <a href="/docs/{{ $p.latestVersion }}/setup/" class="ac-btn ac-btn-primary">
+            <iconify-icon icon="heroicons:bolt" width="16" height="16"></iconify-icon>
+            Get Started Free
+          </a>
+          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="ac-btn ac-btn-secondary">
+            <iconify-icon icon="heroicons:chat-bubble-bottom-center" width="16" height="16"></iconify-icon>
+            Talk to Sales
+          </a>
+        </div>
+
+        <div class="ac-hero-trust">
+          <span class="ac-hero-trust-item">
+            <iconify-icon icon="heroicons:shield-check" width="14" height="14"></iconify-icon>
+            AES-256 Encrypted
+          </span>
+          <span class="ac-hero-trust-item">
+            <iconify-icon icon="heroicons:cloud" width="14" height="14"></iconify-icon>
+            Any Cloud
+          </span>
+          <span class="ac-hero-trust-item">
+            <iconify-icon icon="heroicons:code-bracket" width="14" height="14"></iconify-icon>
+            Open Source
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Right: Product UI card (Backup Status) -->
+      <div class="column is-6 is-full-touch">
+        <div class="ac-product-card">
+          <div class="ac-product-card-header">
+            <div class="ac-product-card-header-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="ac-product-card-title">KubeStash — Backup Status</span>
+            <div class="ac-product-card-status">
+              <span class="ac-product-card-live-dot"></span>
+              Live
+            </div>
+          </div>
+          <div class="ac-product-card-body">
+
+            <!-- Backup status table -->
+            <table class="ac-status-table">
+              <thead>
+                <tr>
+                  <th>Workload</th>
+                  <th>Type</th>
+                  <th>Size</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>postgres-prod</td>
+                  <td>PG 16</td>
+                  <td>4.2 GB</td>
+                  <td><span class="ac-status-dot success"></span>Completed</td>
+                </tr>
+                <tr>
+                  <td>mongodb-primary</td>
+                  <td>MongoDB</td>
+                  <td>8.7 GB</td>
+                  <td><span class="ac-status-dot running"></span>Running…</td>
+                </tr>
+                <tr>
+                  <td>redis-cache</td>
+                  <td>Redis</td>
+                  <td>512 MB</td>
+                  <td><span class="ac-status-dot success"></span>Completed</td>
+                </tr>
+                <tr>
+                  <td>mysql-analytics</td>
+                  <td>MySQL 8</td>
+                  <td>11.3 GB</td>
+                  <td><span class="ac-status-dot pending"></span>Scheduled</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Helm install snippet -->
+            <div class="ac-install-snippet">
+              <span class="t-cmd">$ helm install {{ $p.key }} \</span><br>
+              &nbsp;&nbsp;<span class="t-val">oci://ghcr.io/appscode-charts/{{ $p.key }}</span> <span class="t-cmd">\</span><br>
+              &nbsp;&nbsp;<span class="t-flag">--version</span> <span class="t-val">{{ $p.latestVersion }}</span> <span class="t-cmd">\</span><br>
+              &nbsp;&nbsp;<span class="t-flag">--namespace</span> <span class="t-val">{{ $p.key }}</span> <span class="t-flag">--create-namespace</span><br>
+              <span class="t-ok">✓ KubeStash installed successfully</span>
+            </div>
+
+            <!-- Last restore stat -->
+            <div class="ac-product-card-stat">
+              <span>Last restore</span>
+              <strong>2m 34s ago — ✓ verified</strong>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
