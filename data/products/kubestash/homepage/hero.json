@@ -3,7 +3,6 @@
   "cta_primary": "Get Started Free",
   "cta_secondary": "Talk to Sales",
   "trust_items": [
-    { "icon": "heroicons:code-bracket", "label": "Open Source" },
     { "icon": "heroicons:shield-check", "label": "Enterprise Ready" },
     { "icon": "heroicons:calendar-days", "label": "30-Day Free License" },
     { "icon": "heroicons:server-stack", "label": "Any Kubernetes Distribution" }
