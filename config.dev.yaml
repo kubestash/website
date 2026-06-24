@@ -2,6 +2,7 @@ title: Backup your Kubernetes Stateful Applications
 baseurl: https://stashed-v1-hugo.web.app
 languageCode: en-us
 assetDir: static
+theme: hugo-product-theme
 googleAnalytics: UA-62096468-4
 disableKinds:
 - taxonomy
