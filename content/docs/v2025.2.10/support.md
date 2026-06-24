@@ -1,0 +1,26 @@
+---
+title: Support | KubeStash
+description: Support
+menu:
+  docs_v2025.2.10:
+    identifier: support-kubestash
+    name: Support
+    parent: welcome
+    weight: 1020
+product_name: kubestash
+menu_name: docs_v2025.2.10
+section_menu_id: welcome
+url: /docs/v2025.2.10/welcome/support/
+aliases:
+- /docs/v2025.2.10/support/
+info:
+  cli: v0.15.0
+  installer: v2025.2.10
+  version: v2025.2.10
+---
+
+# Support
+
+To speak with us, please leave a message on [our website](https://appscode.com/contact/). To receive product announcements, follow us on [Twitter](https://twitter.com/KubeStash).
+
+If you have found a bug with KubeStash or want to request for new features, please [file an issue](https://github.com/kubestash/project/issues/new).

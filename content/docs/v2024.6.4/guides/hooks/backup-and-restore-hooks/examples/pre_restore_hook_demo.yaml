@@ -1,0 +1,29 @@
+apiVersion: core.kubestash.com/v1alpha1
+kind: RestoreSession
+metadata:
+  name: sample-restore
+  namespace: demo
+spec:
+  target:
+    apiGroup: kubedb.com
+    kind: MySQL
+    name: sample-mysql
+    namespace: demo
+  dataSource:
+    repository: demo-repo
+    snapshot: latest
+    encryptionSecret:
+      name: encrypt-secret
+      namespace: demo
+  addon:
+    name: mysql-addon
+    tasks:
+      - name: logical-backup-restore
+  hooks:
+    postRestore:
+      - name: pre-hook
+        hookTemplate:
+          name: drop-db-hook
+          namespace: demo
+        maxRetry: 3
+        timeout: 30s

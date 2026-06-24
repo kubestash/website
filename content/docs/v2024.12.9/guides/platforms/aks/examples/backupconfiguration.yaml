@@ -1,0 +1,52 @@
+apiVersion: core.kubestash.com/v1alpha1
+kind: BackupConfiguration
+metadata:
+  name: sample-backup-dep
+  namespace: demo
+spec:
+  target:
+    apiGroup: apps
+    kind: Deployment
+    name: kubestash-demo
+    namespace: demo
+  backends:
+    - name: azure-backend
+      storageRef:
+        name: azure-storage
+        namespace: demo
+      retentionPolicy:
+        name: demo-retention
+        namespace: demo
+  sessions:
+    - name: demo-session
+      scheduler:
+        schedule: "*/5 * * * *"
+        jobTemplate:
+          backoffLimit: 1
+      repositories:
+        - name: azure-demo-repo
+          backend: azure-backend
+          directory: /dep
+          encryptionSecret:
+            name: encrypt-secret
+            namespace: demo
+      addon:
+        name: workload-addon
+        tasks:
+          - name: logical-backup
+            targetVolumes:
+              volumeMounts:
+                - name: source-data
+                  mountPath: /source/data
+            params:
+              paths: /source/data
+              exclude: /source/data/lost+found
+        jobTemplate:
+          metadata:
+            labels:
+              azure.workload.identity/use: "true"
+          spec:
+            serviceAccountName: bucket-user
+      retryConfig:
+        maxRetry: 2
+        delay: 1m
