@@ -73,7 +73,7 @@
     {
       "title": "Backup Kubernetes Volumes",
       "image": {
-        "src": "/assets/images/addons/illustrations/backup-kubernetes-volumes.png",
+        "src": "/assets/images/addons/illustrations/backup-kubernetes-volumes.svg",
         "alt": "http"
       },
       "icon": {
@@ -138,11 +138,11 @@
     {
       "title": "Volume Snapshot",
       "image": {
-        "src": "/assets/images/addons/illustrations/volume-snapshot.png",
+        "src": "/assets/images/addons/illustrations/volume-snapshot.svg",
         "alt": "http"
       },
       "icon": {
-        "src": "/assets/images/products/stash/features/volume-snapshot.png",
+        "src": "/assets/images/products/stash/features/volume-snapshot.svg",
         "alt": "http"
       },
       "summary": "",
