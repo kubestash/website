@@ -181,6 +181,19 @@
       },
       "summary": "",
       "description": "Stash comes with native support for monitoring via Prometheus. You can use builtin Prometheus scrapper or CoreOS Prometheus Operator to monitor your database in Kubernetes. You can use the Grafana to view key operational metrics, including compute/memory/storage capacity utilization, I/O activity, and instance connections."
+    },
+    {
+      "title": "Comprehensively Documented Backup and Restoration Procedures",
+      "image": {
+        "src": "/assets/images/addons/illustrations/declarative-api.png",
+        "alt": "http"
+      },
+      "icon": {
+        "src": "/assets/images/products/stash/features/declarative-api.svg",
+        "alt": "http"
+      },
+      "summary": "All backup and restoration procedures comprehensively documented through declarative CRDs.",
+      "description": "All backup and restoration procedures are comprehensively documented through declarative Kubernetes CRDs. BackupConfiguration, RestoreSession, RetentionPolicy, HookTemplate, BackupVerifier, and BackupBlueprint are both the configuration and the Standard Operating Procedure: audit-ready, version-controlled, and human-readable."
     }
   ],
   "versions": [
