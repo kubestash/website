@@ -181,6 +181,19 @@
       },
       "summary": "",
       "description": "Stash comes with native support for monitoring via Prometheus. You can use builtin Prometheus scrapper or CoreOS Prometheus Operator to monitor your database in Kubernetes. You can use the Grafana to view key operational metrics, including compute/memory/storage capacity utilization, I/O activity, and instance connections."
+    },
+    {
+      "title": "Active-Active Data Replication between Primary and DR Sites",
+      "image": {
+        "src": "/assets/images/addons/illustrations/declarative-api.png",
+        "alt": "http"
+      },
+      "icon": {
+        "src": "/assets/images/products/stash/features/declarative-api.svg",
+        "alt": "http"
+      },
+      "summary": "Real-time, secure data replication between primary DC and DR sites in active-active mode.",
+      "description": "KubeStash supports real-time, secure data replication between primary data center and disaster recovery sites operating in active-active mode. Snapshots are replicated across multiple BackupStorage targets in DC, DR, and Near-DR. Paired with KubeDB, engine-native synchronous multi-master replication delivers RPO near zero for the live data path."
     }
   ],
   "versions": [
