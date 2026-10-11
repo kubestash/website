@@ -1,0 +1,41 @@
+apiVersion: storage.kubestash.com/v1alpha1
+kind: Repository
+metadata:
+  name: gcs-demo-repo
+  namespace: demo
+spec:
+  appRef:
+    apiGroup: apps
+    kind: StatefulSet
+    name: sample-sts
+    namespace: demo
+  deletionPolicy: Delete
+  encryptionSecret:
+    name: encrypt-secret
+    namespace: demo
+  path: /demo/data
+  storageRef:
+    name: gcs-storage
+    namespace: demo
+status:
+  componentPaths:
+    - repository/v1/demo-session/pod-0
+    - repository/v1/demo-session/pod-1
+    - repository/v1/demo-session/pod-2
+  conditions:
+    - lastTransitionTime: "2023-12-07T06:37:40Z"
+      message: Successfully initialized repository
+      reason: RepositoryInitializationSucceeded
+      status: "True"
+      type: RepositoryInitialized
+  integrity: true
+  lastBackupTime: "2023-12-07T06:38:00Z"
+  phase: Ready
+  recentSnapshots:
+    - name: gcs-demo-repo-sample-backup-sts-demo-session-1701940920
+      phase: Succeeded
+      session: demo-session
+      size: 12.222 MiB
+      snapshotTime: "2023-12-07T06:38:10Z"
+  size: 12.222 MiB
+  snapshotCount: 1

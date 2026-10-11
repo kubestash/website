@@ -1,0 +1,18 @@
+apiVersion: storage.kubestash.com/v1alpha1
+kind: BackupStorage
+metadata:
+  name: minio-storage
+  namespace: demo
+spec:
+  storage:
+    provider: s3
+    s3:
+      endpoint: https://my-minio-service.minio-namespace.svc
+      bucket: kubestash-demo
+      prefix: /backup/demo/deployment/kubestash-demo
+      secretName: minio-secret
+  usagePolicy:
+    allowedNamespaces:
+      from: All
+  default: true
+  deletionPolicy: WipeOut
