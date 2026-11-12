@@ -1,0 +1,29 @@
+apiVersion: addons.kubestash.com/v1alpha1
+kind: Function
+metadata:
+  annotations:
+    meta.helm.sh/release-name: kubedb
+    meta.helm.sh/release-namespace: kubedb
+  creationTimestamp: "2023-12-12T12:55:59Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: kubedb
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kubedb-kubestash-catalog
+    app.kubernetes.io/version: v2023.12.11
+    helm.sh/chart: kubedb-kubestash-catalog-v2023.12.11
+  name: postgres-backup
+  resourceVersion: "277644"
+  uid: f64449f8-1111-4a4d-8c6e-96c5b877aef6
+spec:
+  args:
+    - backup
+    - --namespace=${namespace:=default}
+    - --backupsession=${backupSession:=}
+    - --enable-cache=${enableCache:=}
+    - --scratch-dir=${scratchDir:=}
+    - --wait-timeout=${waitTimeout:=300}
+    - --pg-args=${args:=}
+    - --backup-cmd=${backupCmd:=}
+    - --user=${user:=}
+  image: ghcr.io/kubedb/postgres-restic-plugin:v0.5.0

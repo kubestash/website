@@ -1,0 +1,62 @@
+apiVersion: core.kubestash.com/v1alpha1
+kind: BackupSession
+metadata:
+  creationTimestamp: "2023-12-14T08:40:01Z"
+  finalizers:
+    - kubestash.com/cleanup
+  generation: 1
+  name: sample-backup-sts-demo-session-1702543201
+  namespace: demo
+  ownerReferences:
+    - apiVersion: core.kubestash.com/v1alpha1
+      blockOwnerDeletion: true
+      controller: true
+      kind: BackupConfiguration
+      name: sample-backup-sts
+      uid: 83b71921-16be-4300-bc72-9eed5a94de58
+  resourceVersion: "344530"
+  uid: 948cd21a-cc2d-4c4a-ba8f-d5045ffa32f9
+spec:
+  invoker:
+    apiGroup: core.kubestash.com
+    kind: BackupConfiguration
+    name: sample-backup-sts
+  retryLeft: 2
+  session: demo-session
+status:
+  conditions:
+    - lastTransitionTime: "2023-12-14T08:40:01Z"
+      message: Snapshots have been ensured successfully.
+      reason: SuccessfullyEnsuredSnapshots
+      status: "True"
+      type: SnapshotsEnsured
+    - lastTransitionTime: "2023-12-14T08:40:01Z"
+      message: Backup Executor has been ensured successfully.
+      reason: SuccessfullyEnsuredBackupExecutor
+      status: "True"
+      type: BackupExecutorEnsured
+    - lastTransitionTime: "2023-12-14T08:40:33Z"
+      reason: SuccessfullyCleanedSessionHistory
+      status: "True"
+      type: SessionHistoryCleaned
+    - lastTransitionTime: "2023-12-14T08:40:33Z"
+      message: Metrics have been pushed successfully.
+      reason: SuccessfullyPushedMetrics
+      status: "True"
+      type: MetricsPushed
+  phase: Succeeded
+  retentionPolicy:
+    - phase: Applied
+      ref:
+        name: demo-retention
+        namespace: demo
+      repository: gcs-demo-repo
+  snapshots:
+    - appRef:
+        apiGroup: apps
+        kind: StatefulSet
+        name: sample-sts
+        namespace: demo
+      name: gcs-demo-repo-sample-backup-sts-demo-session-1702543201
+      phase: Succeeded
+      repository: gcs-demo-repo
