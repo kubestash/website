@@ -181,6 +181,19 @@
       },
       "summary": "",
       "description": "Stash comes with native support for monitoring via Prometheus. You can use builtin Prometheus scrapper or CoreOS Prometheus Operator to monitor your database in Kubernetes. You can use the Grafana to view key operational metrics, including compute/memory/storage capacity utilization, I/O activity, and instance connections."
+    },
+    {
+      "title": "Online, Offline, and End-of-Day Backup",
+      "image": {
+        "src": "/assets/images/addons/illustrations/declarative-api.png",
+        "alt": "http"
+      },
+      "icon": {
+        "src": "/assets/images/products/stash/features/declarative-api.svg",
+        "alt": "http"
+      },
+      "summary": "Online, offline, and end-of-day backup from one declarative API.",
+      "description": "KubeStash supports online backup during business hours, automated end-of-day backup jobs via cron schedules, and offline / air-gapped retention through immutable storage targets such as S3 Object Lock, Azure Blob immutability, GCS bucket lock, and WORM-mode object stores. All three backup modes coexist in a single BackupConfiguration with per-target schedules and retention."
     }
   ],
   "versions": [
