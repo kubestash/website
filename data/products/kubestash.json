@@ -181,6 +181,19 @@
       },
       "summary": "",
       "description": "Stash comes with native support for monitoring via Prometheus. You can use builtin Prometheus scrapper or CoreOS Prometheus Operator to monitor your database in Kubernetes. You can use the Grafana to view key operational metrics, including compute/memory/storage capacity utilization, I/O activity, and instance connections."
+    },
+    {
+      "title": "Business Continuity and Disaster Recovery",
+      "image": {
+        "src": "/assets/images/addons/illustrations/declarative-api.png",
+        "alt": "http"
+      },
+      "icon": {
+        "src": "/assets/images/products/stash/features/declarative-api.svg",
+        "alt": "http"
+      },
+      "summary": "Business Continuity Plan (BCP) and Disaster Recovery (DR) with online DR readiness.",
+      "description": "KubeStash implements a Business Continuity Plan (BCP) and Disaster Recovery (DR) solution with online DR readiness. Cross-cluster RestoreSession, BackupBlueprint, RetentionPolicy, and BackupVerifier keep the DR site warm, drill-ready, and able to take over without manual data shuffling."
     }
   ],
   "versions": [
